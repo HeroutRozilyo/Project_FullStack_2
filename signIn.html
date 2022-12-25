@@ -58,24 +58,43 @@
     <script src="signinUp.js"></script>
     <script>
         function OnclickSignIn() {
-
-
+            //clean();
             var email1 = document.getElementById("email").value;
             var password = document.getElementById("password").value;
-            var jUser = JSON.parse(window.localStorage.getItem(email1));
-            if (jUser != null && jUser.password === password) {
-                window.location.href = "home.html";
+            //var jUser = JSON.parse(window.localStorage.getItem(email1));
+            var users = JSON.parse(localStorage.getItem("users")) ?? [];
+            //  users = JSON.parse(users);
+            if (users === []) {
+
+                setFormMessage(loginForm, "error", "this user not exits");
+
             }
+
+
             else {
-                alert("not good!");
-                setFormMessage(loginForm, "error", "Invalid username/password combination");
+                var jUser = users.find(i => i.email === email1) ?? null;
+                if (jUser === null)
+                    setFormMessage(loginForm, "error", "this user not exits");
+
+                else if (jUser.password === password) {
+                    const user = {
+                        name: jUser.name,
+                        email: email1,
+                        password: password,
+                        Score:jUser.Score ,
+                        allGame: jUser.allGame,
+
+                    }
+                    window.localStorage.setItem("CurrenUser", JSON.stringify(user));
+                    window.location.href = "home.html";
+
+                }
+
+                else {
+                    alert("not good!");
+                    setFormMessage(loginForm, "error", "Invalid username/password combination");
+                }
             }
-
-
-
-
-
-
         }
     </script>
     <script>
@@ -83,16 +102,28 @@
             var username = document.getElementById("signupUsername").value;
             var email = document.getElementById("emailCreate").value;
             var pass = document.getElementById("pass1").value;
-            var pass2=document.getElementById("pass2").value;
+            var pass2 = document.getElementById("pass2").value;
+            var users = JSON.parse(localStorage.getItem("users")) ?? [];
+            // users = JSON.parse(users);
+
+            //if (users.find(i => i.email === email)) {
+            if (users.find(i => i.email === email)) {
+                alert("Email address is taking");
+                return;
+            }
+
             if (username != "") {
-                if (email != "" && pass != "" &&  pass2!= "") {
+                if (email != "" && pass != "" && pass2 != "") {
                     if (pass.match(pass2)) {
                         const user = {
                             name: username,
                             email: email,
                             password: pass,
+                            Score: 0,
+                            allGame: 0,
                         }
-                        window.localStorage.setItem(email, JSON.stringify(user));
+                        users.push(user);
+                        window.localStorage.setItem("users", JSON.stringify(users));
                         alert("Welcome!");
                     }
                     else alert("check your password");
@@ -101,6 +132,11 @@
 
 
             }
+        }
+    </script>
+    <script>
+        function clean() {
+            localStorage.clear();
         }
     </script>
 </body>
