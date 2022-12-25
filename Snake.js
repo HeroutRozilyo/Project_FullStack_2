@@ -83,34 +83,45 @@ function isGameOver() {
     if (gameOver) {
         ctx.fillStyle = "white";
         ctx.font = "50px verdana";
-        
+
         ctx.fillText("Game Over! ", canvas.clientWidth / 6.5, canvas.clientHeight / 2);//position our text in center
         let btn = document.createElement("button");
         btn.innerHTML = "Try Again!";
-        btn.addEventListener('click', function(){location.reload()}) ;
-        btn.style.position="sticky";
-       btn.style.backgroundColor="#c2fbd7";
-       btn.style.borderRadius=100+"px";
-       btn.style.boxShadow="black 20px 10px 50px";
-        btn.style.padding=10+"px";
-        btn.style.color="green";
-        btn.style,cursor="pointer";
-        btn.style.display="inline-block";
-        btn.style.fontFamily=" CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif";
-        btn.style.padding="7px 20px";
-        btn.style.textAlign="center";
-        btn.style.textDecoration="none";
-        btn.style.transition="all 250ms";
-        btn.style.border="0";
-        btn.style.fontSize="16px";
-        btn.id= "btn";
-       
-        
+        btn.addEventListener('click', function () { location.reload() });
+        btn.style.position = "sticky";
+        btn.style.backgroundColor = "#c2fbd7";
+        btn.style.borderRadius = 100 + "px";
+        btn.style.boxShadow = "black 20px 10px 50px";
+        btn.style.padding = 10 + "px";
+        btn.style.color = "green";
+        btn.style, cursor = "pointer";
+        btn.style.display = "inline-block";
+        btn.style.fontFamily = " CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif";
+        btn.style.padding = "7px 20px";
+        btn.style.textAlign = "center";
+        btn.style.textDecoration = "none";
+        btn.style.transition = "all 250ms";
+        btn.style.border = "0";
+        btn.style.fontSize = "16px";
+        btn.id = "btn";
         document.body.appendChild(btn);
-       
+        //update Score
+        var users = JSON.parse(localStorage.getItem("users")) ?? [];
+        var Current = JSON.parse(localStorage.getItem("CurrenUser"));
+        Current.allGame += 1;
+        Current.Score += score;
         
-          
-          
+        users = users.filter(item => item.email !== Current.email)
+
+        users.push(Current);
+        window.localStorage.removeItem('users');
+        window.localStorage.removeItem('CurrenUser');
+        window.localStorage.setItem('users', JSON.stringify(users));
+        window.localStorage.setItem("CurrenUser",JSON.stringify(Current));
+
+
+
+
     }
 
     return gameOver;// this will stop execution of drawgame method
@@ -214,7 +225,8 @@ function keyDown()
     }
 }
 
-drawGame(); 
+
+drawGame();
 
 
 

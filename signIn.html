@@ -66,7 +66,7 @@
             //  users = JSON.parse(users);
             if (users === []) {
 
-                setFormMessage(loginForm, "error", "this user not exits");
+                setFormMessage(document.querySelector("#login"), "error", "this user not exits");
 
             }
 
@@ -74,7 +74,7 @@
             else {
                 var jUser = users.find(i => i.email === email1) ?? null;
                 if (jUser === null)
-                    setFormMessage(loginForm, "error", "this user not exits");
+                    setFormMessage(document.querySelector("#login"), "error", "this user not exits");
 
                 else if (jUser.password === password) {
                     const user = {

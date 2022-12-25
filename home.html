@@ -87,15 +87,22 @@
 
     <!-- Analytics -->
     <script>
+        var UserNow=JSON.parse(window.localStorage.getItem('CurrenUser'));
         function openForm() {
             document.getElementById("myForm").style.display = "block";
-            var UserNow=JSON.parse(window.localStorage.getItem('CurrenUser'));
+            
             nameNow=UserNow.name;
             document.getElementById('name').innerHTML="Hello "+nameNow+"!";
         }
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
+        }
+        function place(){
+            var users = JSON.parse(localStorage.getItem("users")) ?? [];
+            users.sort((x,y)=>x.Score>y.Score);
+            var index= users.findIndex(x=>x.email===UserNow.email);
+            return index;
         }
     </script>
 
