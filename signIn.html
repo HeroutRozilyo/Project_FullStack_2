@@ -64,7 +64,7 @@
             var password = document.getElementById("password").value;
             var jUser = JSON.parse(window.localStorage.getItem(email1));
             if (jUser != null && jUser.password === password) {
-                alert("good!");
+                window.location.href = "home.html";
             }
             else {
                 alert("not good!");
