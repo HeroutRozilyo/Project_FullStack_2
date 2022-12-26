@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Image Slideshow Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="author" content="Codeconvey" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/demo.css" />
+
+</head>
+
+<body>
+
+    <div class="ScriptTop">
+        <div class="rt-container">
+            <button class="imagPro"><i class="fa fa-user-circle-o" onclick="openForm()"></i></button>
+        </div>
+    </div>
+
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1 id="name">Hello, </h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    
+
+
+    <header class="ScriptHeader">
+        <div class="rt-container">
+            <div class="col-rt-12">
+                <div class="rt-heading">
+                    <h1>Start playing!</h1>
+                    <p>Click the game you want</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="rt-container">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+
+                    <!-- 3D Image Slideshow HTML -->
+                    <section class="slideshow">
+                        <div class="content">
+                            <div class="slider-content">
+                                <figure class="shadow">
+                                    <img src="image/classic-snake.jpg" onclick="location.href='Snake.html'">
+                                </figure>
+                                <figure class="shadow"><img src="image/comingSoon.png">
+                                </figure>
+                                <figure class="shadow"><img src="image/comingSoon.png"></figure>
+                                <figure class="shadow"><img src="image/comingSoon.png"></figure>
+                                <figure class="shadow"><img src="image/comingSoon.png"></figure>
+                                <figure class="shadow"><img src="image/comingSoon.png"></figure>
+
+
+
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End 3D Image Slideshow HTML -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Analytics -->
+    <script>
+        var UserNow=JSON.parse(window.localStorage.getItem('CurrenUser'));
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            
+            nameNow=UserNow.name;
+            document.getElementById('name').innerHTML="Hello "+nameNow+"!";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        function place(){
+            var users = JSON.parse(localStorage.getItem("users")) ?? [];
+            users.sort((x,y)=>x.Score>y.Score);
+            var index= users.findIndex(x=>x.email===UserNow.email);
+            return index;
+        }
+    </script>
+
+</body>
+
+</html>
