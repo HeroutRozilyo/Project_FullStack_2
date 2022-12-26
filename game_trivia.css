@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+  font-family: "Open Sans", sans-serif;
+  
+  text-align: center;
+  background-repeat: repeat;
+  background-size: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.game-board {
+  height: 100%;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("hanukkah-background.jpg");
+  background-size: cover;
+
+}
+
+.question-area,
+.answers-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+    margin: 10px;
+    background-repeat: repeat;
+    box-sizing: border-box;
+    opacity: 80%;
+
+}
+
+.menu-area {
+    height: 4%;
+    background-color: #00B7C3;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 5px 5px;
+}
+
+.myProgress {
+    height: 4%;
+    width: 100%;
+    background-color: grey;
+  }
+  
+.myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }
+
+.question-area {
+    background-color: wheat;
+    height: 22%;
+  }
+
+
+.question-area .theAnswer, .score {
+    display: none;
+}
+
+.answers-area {
+    background-color: #67291d;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    background-position: top;
+    align-items: top;
+
+  }
+
+  .answers-area .card {
+    width: 20%;
+    margin: 10px;
+    padding: 20px 10px;
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+
+  .message-box {
+    width: 400px;
+    height: 200px;
+    position: fixed;
+    bottom: 40%;
+    left: 30%;
+    transition: all .15s ease-out;
+    border: black;
+    background-color: black;
+    align-items: center;
+    padding: 20px 15px;
+    display: none;
+  }
+  
+  .nextButton {
+    height: 30px;
+    width: 100px;
+    bottom: -60px;
+    position: relative;
+
+  }
+
+  /*
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px 30px 110px;
+    /* min-height: 235px; */
+    background-repeat: repeat;
+    /*background-size: 200px;*/
+    height: 50vh;
+    box-sizing: border-box;
+  */

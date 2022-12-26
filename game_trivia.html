@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name= "viewport" content="width=device-width,initial-scale=1.0">
+        <title>Hanukkah trivia game</title> 
+        <link rel="stylesheet" href="game_trivia.css">
+        <script src="game_triviaQuestions.js" type="text/javascript"></script>
+    
+    </head>
+
+    <body>
+        <div class="game-board">
+
+            <div class = "menu-area">
+                <div class="userName">name</div>
+                <div class="userScore">score</div>
+                <button class="exit">exit</button>
+            </div>
+
+            <div class="myProgress">
+                <div class="myBar"></div>
+            </div>
+
+            <div class = "question-area">
+                <div class = "card question-card">
+                    <h1 class="text">her will be question</h1>
+                    <div class="theAnswer">none</div>
+                    <div class="score">none</div>
+                </div>
+
+            </div>
+
+            <div class="answers-area">
+                <div class = "card answer-card">
+                    <div class="text">A</div>
+                    <div class="correct"></div>
+                </div>
+                <div class = "card answer-card">
+                    <div class="text">B</div>
+                    <div class="correct"></div>
+                </div>
+                <div class = "card answer-card">
+                    <div class="text">C</div>
+                    <div class="correct"></div>
+                </div>
+                <div class = "card answer-card">
+                    <div class="text">D</div>
+                    <div class="correct"></div>
+                </div>
+
+            </div>
+
+            <div class="message-box">
+                <h1 class="message-text"></h1>
+                <button class="nextButton" onclick="playTurn()">next</button>
+            </div>
+        </div>
+
+        <script src="game_trivia.js" type="text/javascript"></script>
+
+
+    </body>
+
+
+</html>
