@@ -108,8 +108,12 @@ function isGameOver() {
         //update Score
         var users = JSON.parse(localStorage.getItem("users")) ?? [];
         var Current = JSON.parse(localStorage.getItem("CurrenUser"));
-        Current.allGame += 1;
-        Current.Score += score;
+        var gamenum=parseInt(Current.allGame);
+        gamenum+=1;
+        Current.allGame=(gamenum).toString();
+        var scoreup=parseInt(Current.Score);
+        scoreup+=score;
+        Current.Score= (scoreup).toString();
         
         users = users.filter(item => item.email !== Current.email)
 

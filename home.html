@@ -10,7 +10,7 @@
     <meta name="author" content="Codeconvey" />
 
     <link rel="stylesheet" href="css/style.css">
-
+    <script type="text/javascript" src="home.js"></script>
     <link rel="stylesheet" href="css/demo.css" />
 
 </head>
@@ -24,20 +24,79 @@
     </div>
 
     <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1 id="name">Hello, </h1>
+        <div class="avatrName">
+            <h1 id="name"> </h1>
+        </div>
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+        <div class="grid_Container">
+            <div class="tScore">
+                <h6 id="TotalScore"></h6>
+            </div>
+            <div class="tplay">
+                <h6 id="numPlay"></h6>
+            </div>
+            <div class="place">
+                <h6 id="place"></h6>
+            </div>
+            <p class="leader">
+                The Leaders:                
+            </p>
+            <p class="leader">
+                
+            </p>
+            <p class="leader">
+                
+            </p>
+            
+           
+            <div class="lboard_mem">
+                <div class="img">
+                    <img src="image/avatar.png" alt="picture_1">
+                </div>
+                <div class="name_bar">
+                    <h6 id="one"></h6> 
+                    <div class="points" id="oneScore"></div>
+                </div>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
 
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
+
+            </div>
+            <div class="lboard_mem">
+                <div class="img">
+                    <img src="image/avatar.png" alt="picture_1">
+                </div>
+                <div class="name_bar">
+                    <h6 id="two"></h6>
+                    <div class="points" id="twoScore"></div>
+                        
+                    
+                    
+                </div>
+
+
+
+            </div>
+            <div class="lboard_mem">
+                <div class="img">
+                    <img src="image/avatar.png" alt="picture_1">
+                </div>
+                <div class="name_bar">
+                    <h6 id="three"></h6>
+                    <div class="points" id="threeScore"></div>
+                      
+                        
+                   
+                    
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <button type="button" class="cancel" onclick="closeForm()">Close</button>
     </div>
-    
+
 
 
     <header class="ScriptHeader">
@@ -63,7 +122,7 @@
                                 <figure class="shadow">
                                     <img src="image/classic-snake.jpg" onclick="location.href='Snake.html'">
                                 </figure>
-                                <figure class="shadow"><img src="image/comingSoon.png">
+                                <figure class="shadow"><img src="image\game2.png" onclick="location.href='game_trivia.html'" >
                                 </figure>
                                 <figure class="shadow"><img src="image/comingSoon.png"></figure>
                                 <figure class="shadow"><img src="image/comingSoon.png"></figure>
@@ -85,26 +144,7 @@
 
 
 
-    <!-- Analytics -->
-    <script>
-        var UserNow=JSON.parse(window.localStorage.getItem('CurrenUser'));
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-            
-            nameNow=UserNow.name;
-            document.getElementById('name').innerHTML="Hello "+nameNow+"!";
-        }
-
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
-        function place(){
-            var users = JSON.parse(localStorage.getItem("users")) ?? [];
-            users.sort((x,y)=>x.Score>y.Score);
-            var index= users.findIndex(x=>x.email===UserNow.email);
-            return index;
-        }
-    </script>
+    
 
 </body>
 

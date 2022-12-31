@@ -152,6 +152,24 @@ function gameOver() {
     document.querySelector(".message-box").classList.remove("none");
     document.querySelector(".message-text").innerHTML += " You finish all the questions this score: " + score;
     document.querySelector(".nextButton").innerHTML = "back to manu";
+
+    //update Score
+    var users = JSON.parse(localStorage.getItem("users")) ?? [];
+    var Current = JSON.parse(localStorage.getItem("CurrenUser"));
+    var gamenum=parseInt(Current.allGame);
+    gamenum+=1;
+    Current.allGame=(gamenum).toString();
+    var scoreup=parseInt(Current.Score);
+    scoreup+=score;
+    Current.Score= (scoreup).toString();
+    
+    users = users.filter(item => item.email !== Current.email)
+
+    users.push(Current);
+    window.localStorage.removeItem('users');
+    window.localStorage.removeItem('CurrenUser');
+    window.localStorage.setItem('users', JSON.stringify(users));
+    window.localStorage.setItem("CurrenUser",JSON.stringify(Current));
 }
 
 

@@ -5,6 +5,7 @@ container {
   overflow: hidden;
 }
 
+
 .wgh-slider {
   position: relative;
   top: 50%;
@@ -195,3 +196,4 @@ input.wgh-slider-target {
 }
 
 /*//////////////////////////////////////////////////*/
+
