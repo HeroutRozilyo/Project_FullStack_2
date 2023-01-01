@@ -152,7 +152,7 @@ function OnclickSignIn() {
 }
 
 function blockUser(jUser) {
-   
+
     window.canBlock = false;
     var seconds = 60;
     var mins = 5;
@@ -218,6 +218,11 @@ function onClickNewUserfunc() {
                 users.push(user);
                 window.localStorage.setItem("users", JSON.stringify(users));
                 alert("Welcome!");
+                const loginForm = document.querySelector("#login");
+                const createAccountForm = document.querySelector("#createAccount");
+                document.getElementById("createAccount").reset();
+                loginForm.classList.remove("form--hidden");
+                createAccountForm.classList.add("form--hidden");
             }
             else alert("check your password");
         }
