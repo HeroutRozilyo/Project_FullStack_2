@@ -5,7 +5,6 @@ var questionDo = [];
 
 //message when the game is over
 var playerWinner = "congratulations! You win!!";
-
 var playerScore = parseInt(score);
 var  roundFinished = false;
 var cardSelected = false;
