@@ -116,6 +116,12 @@ function OnclickSignIn() {
                 tryAccess: '3',
 
             }
+            var access=3;
+            jUser.tryAccess = (access).toString();
+            users = users.filter(item => item.email !== jUser.email)
+            users.push(jUser);
+            window.localStorage.removeItem('users');
+            window.localStorage.setItem('users', JSON.stringify(users));
             window.localStorage.setItem("CurrenUser", JSON.stringify(user));
             window.location.href = "home.html";
 

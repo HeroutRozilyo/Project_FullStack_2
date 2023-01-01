@@ -1,7 +1,7 @@
 var UserNow = JSON.parse(window.localStorage.getItem('CurrenUser'));
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-
+    var UserNow = JSON.parse(window.localStorage.getItem('CurrenUser'));
     nameNow = UserNow.name;
     totalscore = UserNow.Score;
     allgamenow = UserNow.allGame;
