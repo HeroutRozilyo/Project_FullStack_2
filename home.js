@@ -66,3 +66,8 @@ function placebyIndex(index) {
     else
         return "It's empty!"
 }
+
+function signOut(){
+    window.localStorage.removeItem('CurrenUser');
+    window.location.href = "signIn.html";
+}

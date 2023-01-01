@@ -238,6 +238,7 @@ function onClickNewUserfunc() {
     }
 }
 
+
 function clean() {
     localStorage.clear();
 }
