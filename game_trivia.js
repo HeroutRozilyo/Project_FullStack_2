@@ -9,7 +9,8 @@ var playerWinner = "congratulations! You win!!";
 var playerScore = parseInt(score);
 var  roundFinished = false;
 var cardSelected = false;
-
+var Current = JSON.parse(localStorage.getItem("CurrenUser"));
+document.getElementById('username').innerHTML="Name: "+ Current.name;
 updateScores();
 
 var allCardElements = document.querySelectorAll(".card");
