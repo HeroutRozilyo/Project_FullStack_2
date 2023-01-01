@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   
   text-align: center;
   background-repeat: repeat;
@@ -102,15 +104,3 @@ body {
     position: relative;
 
   }
-
-  /*
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 30px 10px 30px 110px;
-    /* min-height: 235px; */
-    background-repeat: repeat;
-    /*background-size: 200px;*/
-    height: 50vh;
-    box-sizing: border-box;
-  */

@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
 
 
-
 html {
   box-sizing: border-box;
 }
@@ -44,9 +43,11 @@ body {
     font-size: 0.69em;
     font-weight: 600;
     line-height: 2.2;
-    padding: 12px 0;
+    padding: 12px 12px;
     text-transform: uppercase;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* To Navigation Style 1*/
@@ -74,6 +75,10 @@ body {
 	color:#fff;
 }
 
+.logOutBt {
+  height: 100%;
+}
+
 
 /* ******************************************************
 	Script Header
@@ -92,7 +97,7 @@ body {
 	line-height:28px;	
 }
 .ScriptHeader h1{
-	font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-family: "Raleway", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
     color: #6a4aed;
