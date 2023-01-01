@@ -103,7 +103,7 @@ function playTurn() {
         }, 500);
     }
     else {
-        exit();
+      location.href='home.html';
     }
 
   }
@@ -152,6 +152,7 @@ function gameOver() {
     document.querySelector(".message-box").classList.remove("none");
     document.querySelector(".message-text").innerHTML += " You finish all the questions this score: " + score;
     document.querySelector(".nextButton").innerHTML = "back to manu";
+    
 
     //update Score
     var users = JSON.parse(localStorage.getItem("users")) ?? [];
