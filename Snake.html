@@ -1,20 +1,31 @@
-
 <!DOCTYPE html>
 <html>
-  
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport", 
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Snake Game</title>
     <link rel="stylesheet" href="Snake.css">
-    
+
 </head>
-  
+
 <body>
+    <div class="menu-area">
+        <div class="userName" id="username">name</div>
+        <div class="snakeH1">
+            <h1>Snake</h1>
+        </div>
+        <button class="exit" onclick="location.href='home.html'"><i class="fa fa-home"></i> </button>
+    </div>
+    <div class="game-board">
+        
+        
+        <canvas id="game" width="400" height="400" />
+    </div>
+
    
-    <canvas id="game" width="400" height="400" />
     <script src="Snake.js"></script>
 </body>
-  
+
 </html>

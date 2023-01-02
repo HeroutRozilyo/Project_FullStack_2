@@ -1,3 +1,5 @@
+
+// to the notes
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
 
@@ -10,12 +12,12 @@ function setInputError(inputElement, message) {
     inputElement.classList.add("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
 }
-
+// clear notes
 function clearInputError(inputElement) {
     inputElement.classList.remove("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
-
+// Switch between the forms
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
@@ -36,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    window.canBlock = true;
-
+    window.canBlock = true;// for block user
+//check if name's user>5
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 5) {
@@ -49,10 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInputError(inputElement);
         });
     });
+    // email regular
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "emailCreate" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value))) {
-                setInputError(inputElement, "emai not in the right format");
+                setInputError(inputElement, "email not in the right format");
             }
 
 
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInputError(inputElement);
         });
     });
-
+// check password
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("keyup", e => {
             var pw = document.getElementById("pass1").value;
@@ -84,14 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// click on sifn in
 function OnclickSignIn() {
     //clean();
     var email1 = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-    //var jUser = JSON.parse(window.localStorage.getItem(email1));
+    
     var users = JSON.parse(localStorage.getItem("users")) ?? [];
-    //  users = JSON.parse(users);
+   
     if (users === []) {
 
         setFormMessage(document.querySelector("#login"), "error", "this user not exits");
@@ -107,7 +110,7 @@ function OnclickSignIn() {
             setFormMessage(document.querySelector("#login"), "error", "this user not exits");
 
         else if (jUser.password === password && parseInt(jUser.tryAccess) > 0) {
-            const user = {
+            const user = {//currentUser
                 name: jUser.name,
                 email: email1,
                 password: password,
@@ -116,13 +119,8 @@ function OnclickSignIn() {
                 tryAccess: '3',
 
             }
-            var access=3;
-            jUser.tryAccess = (access).toString();
-            users = users.filter(item => item.email !== jUser.email)
-            users.push(jUser);
-            window.localStorage.removeItem('users');
-            window.localStorage.setItem('users', JSON.stringify(users));
-            window.localStorage.setItem("CurrenUser", JSON.stringify(user));
+            //for block user
+            restartAccess(jUser);
             window.location.href = "home.html";
 
         }
@@ -156,7 +154,7 @@ function OnclickSignIn() {
         }
     }
 }
-
+//block user for 1 minutes
 function blockUser(jUser) {
 
     window.canBlock = false;

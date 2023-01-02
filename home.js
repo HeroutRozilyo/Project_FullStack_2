@@ -5,6 +5,7 @@ function openForm() {
     nameNow = UserNow.name;
     totalscore = UserNow.Score;
     allgamenow = UserNow.allGame;
+    //popUp page
     document.getElementById('name').innerHTML = "Hello " + nameNow + "!";
     document.getElementById('TotalScore').innerHTML = "Your Total Score is " + totalscore + " good job!";
     document.getElementById('numPlay').innerHTML = "You played in " + allgamenow + " game, keep going!";
@@ -19,7 +20,7 @@ function openForm() {
     else {
         document.getElementById('one').innerHTML = one.name;
         document.getElementById('oneScore').innerHTML = one.Score;
-       // document.getElementById('bar1').style.width = "95%";
+       
     }
 
     if (two === "It's empty!") {
@@ -50,13 +51,14 @@ function closeForm() {
 }
 function place() {
     var users = JSON.parse(localStorage.getItem("users")) ?? [];
-    users=users.sort((x, y) => x.Score > y.Score);
+    
     var res = users.sort(({Score:a}, {Score:b}) => b-a);
     
     var index = res.findIndex(x => x.email === UserNow.email);
     index += 1;
     return index;
 }
+
 function placebyIndex(index) {
     var users = JSON.parse(localStorage.getItem("users")) ?? [];
 

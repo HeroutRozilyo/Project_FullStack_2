@@ -1,3 +1,7 @@
+var Current = JSON.parse(localStorage.getItem("CurrenUser"));
+document.getElementById('username').innerHTML="Name: "+ Current.name;
+
+
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 //increase snake size 
