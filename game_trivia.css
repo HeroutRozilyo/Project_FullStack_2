@@ -43,6 +43,26 @@ body {
     padding: 5px 5px 5px 5px;
 }
 
+.exit {
+  border-radius: 50%;
+  background-color: white;
+  /* Blue background */
+  color: #6a4aed;
+  /* White text */
+  /*padding: 12px 16px;
+  /* Some padding */
+  font-size: 16px;
+  /* Set a font size */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+  border-color: #6a4aed;
+}
+
+.exit :hover {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
 .myProgress {
     height: 4%;
     width: 100%;
@@ -88,19 +108,21 @@ body {
     height: 200px;
     position: fixed;
     bottom: 40%;
-    left: 30%;
+    left: 40%;
     transition: all .15s ease-out;
     border: black;
-    background-color: black;
     align-items: center;
     padding: 20px 15px;
     display: none;
   }
+
   
   .nextButton {
-    height: 30px;
+    height: 40px;
     width: 100px;
-    bottom: -60px;
+    border-radius: 50%;
+    cursor: pointer;
+    bottom: auto;
     position: relative;
 
   }

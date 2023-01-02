@@ -4,6 +4,7 @@
         <meta name= "viewport" content="width=device-width,initial-scale=1.0">
         <title>Hanukkah trivia game</title> 
         <link rel="stylesheet" href="game_trivia.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="game_triviaQuestions.js" type="text/javascript"></script>
     
     </head>
@@ -14,7 +15,7 @@
             <div class = "menu-area">
                 <div class="userName" id="username">name</div>
                 <div class="userScore">score</div>
-                <button class="exit" onclick="location.href='home.html'">exit</button>
+                <button class="exit" onclick="location.href='home.html'"><i class="fa fa-home"></i> </button>
             </div>
 
             <div class="myProgress">
@@ -52,7 +53,7 @@
 
             <div class="message-box">
                 <h1 class="message-text"></h1>
-                <button class="nextButton" onclick="playTurn()">next</button>
+                <button class="nextButton" onclick="playTurn()">next <i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
 

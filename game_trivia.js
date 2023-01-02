@@ -50,17 +50,16 @@ function checkSelectedAnswer() {
 
     if(selectedAnswerText.innerHTML[0] == realAnswer.innerHTML[0]) {
         //the player was right
-        document.querySelector(".message-box").style.backgroundImage = "url('correctImg.jpg')";
-        document.querySelector(".message-box").style.backgroundSize  = "contain";
-        document.querySelector(".message-text").innerHTML = "correct!!";
-        document.querySelector(".message-text").style.color = "black";
+        document.querySelector(".message-box").style.background = "#92D050";
+        document.querySelector(".message-text").innerHTML = '<i class="fa fa-thumbs-up"></i> you correct!!';
+        //document.querySelector(".message-text").style.color = "black";
         var ansScore = question.querySelector(".score");
         score += parseInt(ansScore.innerHTML);
     }
     else {
-        document.querySelector(".message-text").innerHTML = "you wrong:(";
-        document.querySelector(".message-box").style.background = "black";
-        document.querySelector(".message-text").style.color = "white";
+        document.querySelector(".message-text").innerHTML = '<i class="fa fa-thumbs-down"></i> you wrong';
+        document.querySelector(".message-box").style.background = "#FF0000";
+
     }
 
     updateScores();
@@ -91,7 +90,7 @@ function playRound() {
 
 function playTurn() {
 
-    if(document.querySelector(".nextButton").innerHTML == "next") {
+    if(document.querySelector(".nextButton").innerHTML == 'next <i class="fa fa-arrow-right"></i>') {
         roundFinished = true;
         cardSelected = false;
     
@@ -150,8 +149,8 @@ function revealCards(){
 function gameOver() {
 
     document.querySelector(".message-box").classList.remove("none");
-    document.querySelector(".message-text").innerHTML += " You finish all the questions this score: " + score;
-    document.querySelector(".nextButton").innerHTML = "back to manu";
+    document.querySelector(".message-text").innerHTML += " You finish all the questions with the score: " + score;
+    document.querySelector(".nextButton").innerHTML = 'back to manu';
     
 
     //update Score
