@@ -117,8 +117,10 @@ function OnclickSignIn() {
                 Score: jUser.Score,
                 allGame: jUser.allGame,
                 tryAccess: '3',
-
+            
             }
+            window.localStorage.setItem('CurrenUser', JSON.stringify(user));
+            
             //for block user
             restartAccess(jUser);
             window.location.href = "home.html";
